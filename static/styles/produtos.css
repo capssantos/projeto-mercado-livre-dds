@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #ffe600;
+    padding: 10px 20px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.search-bar {
+    flex-grow: 1;
+    margin: 0 20px;
+    display: flex;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    
+}
+
+.search-bar button {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.user-menu a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+}
+
+.user-menu a:hover {
+    text-decoration: underline;
+}
+
+/* Navegação */
+nav {
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Seção de Produtos */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px; /* Espaçamento pequeno entre os cards */
+    padding: 20px;
+    justify-content: center; /* Centraliza os cards no container */
+    max-width: 1200px; /* Limita a largura máxima do grid */
+    margin: 0 auto; /* Centraliza o grid na página */
+}
+
+.product-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 15px;
+    width: 300px; /* Largura consistente */
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden; /* Garante que a imagem não ultrapasse os limites */
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: transform 0.3s ease-in-out; /* Suaviza a transição do zoom */
+}
+
+.product-card:hover img {
+    transform: scale(1.1); /* Aplica um leve zoom na imagem ao passar o mouse */
+}
+
+.product-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    min-height: 48px; /* Garante que o título ocupe um espaço fixo */
+}
+
+.product-card .price {
+    font-size: 20px;
+    color: #00a650;
+    font-weight: bold;
+    margin: 5px 0;
+    height: 30px; /* Altura fixa para o preço */
+}
+
+
+.product-card .description {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    flex-grow: 1; /* Faz com que o texto da descrição cresça para empurrar o restante para o fim */
+}
+
+.product-card button {
+    padding: 10px;
+    background-color: #3483fa;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.product-card button:hover {
+    background-color: #2968c8;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Adicionando sombra ao hover */
+}
+
+@media (max-width: 1024px) {
+    .product-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards por linha */
+        justify-content: center; /* Continua centralizado */
+    }
+}
+
+@media (max-width: 768px) {
+    .product-list {
+        grid-template-columns: 1fr; /* 1 card por linha */
+        justify-content: center; /* Centraliza em telas menores */
+    }
+}

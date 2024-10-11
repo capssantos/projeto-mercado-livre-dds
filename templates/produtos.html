@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado Livre Clone</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/produtos.css') }}">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="#">Mercado Livre</a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar produtos, marcas e muito mais...">
+                <button>Buscar</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seção de Categorias -->
+    <nav>
+        <ul>
+            <li><a href="#">Mais categorias</a></li>
+        </ul>
+    </nav>
+
+    <!-- Seção de Produtos -->
+    <section class="product-list">
+        {%for i in lista%} 
+        <div class="product-card">
+            <img src={{i[1]['imagem']}} alt="Produto 1">
+            <h3>{{i[1]['nome']}}</h3>
+            <p class="price">R$  {{i[1]['preco']}}</p>
+            <p class="description">{{i[1]['empresa']}}</p>
+            <a href={{i[1]['url']}} target="_blank">
+                <button>Comprar</button>
+            </a>
+        </div>
+        {%endfor%} 
+    </section>
+</body>
+</html>
